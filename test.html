@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Test</title>
+    </head>
+    <style>
+        .line{
+            background-color: #5c5c5c;
+            cursor: pointer;
+        }
+        .line:hover:not(.line-drawing){
+            background-color: #2844e6 !important;
+        }
+        .nodo{
+            border: solid #5c5c5c 2px;
+            border-radius: 5%;
+            width: 120px;
+            height: 40px;
+            text-align: center;
+            cursor: move;
+            background: white;
+            z-index: 1;
+        }
+        .nodo:hover {
+            border: solid #2844e6 2px;
+        }
+        .node-active{
+            border: solid #2844e6 2px;
+        }
+        #canvas .nodo:hover .connector{
+            display: block !important;
+        }
+        #canvas .node-active .connector{
+            display: block !important;
+        }
+        .connector:hover{
+            cursor: crosshair;
+        }
+        #canvas{
+            width: 100vw;
+            height: 90vh;
+            display: grid;
+            background: white;
+            background-image: radial-gradient(rgb(117, 117, 117) 1px, transparent 0);
+            background-size: 20px 20px;
+            background-position: -9px -9px;
+        }
+    </style>
+<body>
+    <div class="lista nodos">
+        <div id="1" class="nodo" draggable="true" style="padding-top: 6px;">  
+            STATE
+        </div>
+
+        <div id="2" class="nodo" draggable="true" style="padding-top: 6px;">
+            STATE 2
+        </div>
+        <div id="3" class="nodo" draggable="true" style="padding-top: 6px;">
+            STATE 3
+        </div>
+    </div>
+    <svg height="20" width="20" id="circleConnector" class="connector" style="display: none;">
+        <circle cx="6" cy="6" r="5" stroke="#2844e6" stroke-width="2" fill="white" />
+    </svg>
+    <div id="canvas">
+         
+    </div>
+    <script src="JSFlows.js"></script>
+</body>
+</html>
